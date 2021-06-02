@@ -43,8 +43,11 @@ int ledON = 0;
 
 void setup() {
   // put your setup code here, to run once:
+  //Joystick inputs
   pinMode(forwardBackward, INPUT);
   pinMode(leftRight, INPUT);
+
+  //Motors outputs
   pinMode(enable_1, OUTPUT);
   pinMode(enable_2, OUTPUT);
   pinMode(enable_3, OUTPUT);
@@ -52,6 +55,7 @@ void setup() {
   pinMode(PWM_1, OUTPUT);
   pinMode(PWM_2, OUTPUT);
 
+  //RGB LED outputs
   pinMode(ledBlue, OUTPUT);
   pinMode(ledGreen, OUTPUT);
   pinMode(ledRed, OUTPUT);
@@ -195,6 +199,7 @@ void rightCar(int turn){
   analogWrite(PWM_2, turn);
 }
 
+//Function to control the RGB LED
 void led(int led, long ledFlashing){
   if(millis() - currentMillis > ledFlashing){
     currentMillis = millis();
